@@ -1,0 +1,38 @@
+	#Time based access
+	 RewriteCond %{TIME_HOUR}%{TIME_MIN} <0600 
+	 RewriteCond %{TIME_HOUR}%{TIME_MIN} >1800
+   RewriteRule ^.*$ replaceme [L]
+	
+	#Day of week based access
+	 RewriteCond %{TIME_WDAY} =0
+	 RewriteCond %{TIME_WDAY} =6
+	 RewriteRule ^.*$ replaceme [L]
+	
+	#Not allowed post
+	RewriteCond %{REQUEST_METHOD} !^(GET|POST)
+  RewriteRule ^.*$ replaceme [L]
+	
+	#User agent strings for windows native tools
+	RewriteCond %{HTTP_USER_AGENT} "bits|WindowsPowerShell" [NC,OR]
+	RewriteCond %{HTTP_USER_AGENT} =""
+  RewriteRule ^.*$ replaceme [L]
+	
+	#User agent string for native compiled software Libs and Linux tools
+	RewriteCond %{HTTP_USER_AGENT} "python|java|linux|wget|curl|.net" [NC,OR]
+	RewriteCond %{HTTP_USER_AGENT} =""
+  RewriteRule ^.*$ replaceme [L]
+	
+	#mobile user agents
+	RewriteCond %{HTTP_USER_AGENT} "android|blackberry|googlebot-mobile|Kindle|Nintendo|PlayStation|Windows Phone|XBOX_ONE_ED|AppleTV|Roku|CrOS|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos" [NC]
+	RewriteRule ^.*$ replaceme [L]
+	
+	#If useragent contains below filter with catch at bottom
+	RewriteCond %{HTTP_USER_AGENT} "OS x|-|HTTP Banner Detection|Lynx|Slackbot|nmap|burp|cloudfront|bingbot|clshttp|archiver|sparta|loader|email|nikto|nessus|rapid|Qualys|vas|miner|sparta|HTTrack|crawl|shell|yahoo|google|bot|b\-o\-t|spider|baidu" [NC]
+	RewriteRule ^.*$ replaceme [L]
+	
+	RewriteCond %{HTTP_USER_AGENT} "windows nt" [NC]
+	RewriteRule ^.*$ index.html [L]
+	
+	#Below is what happend is blcklist above is hit
+  #RewriteRule ^.*$ replaceme [L,R=302]
+	#RewriteRule ^.*$ replaceme [L]
