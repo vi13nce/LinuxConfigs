@@ -29,9 +29,9 @@
      #Redirect permanent / https://{DOMAIN}
      SSLEngine on
 
-     SSLCertificateFile {Path}.crt
-     SSLCertificateKeyFile {Path}.key
-     SSLCertificateChainFile {Path}-bundle
+     SSLCertificateFile {Path to}.crt
+     SSLCertificateKeyFile {Path to}.key
+     SSLCertificateChainFile {Path to}-bundle
 
      <Directory /var/www/html>
         Options -Includes -ExecCGI -MultiViews
