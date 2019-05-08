@@ -1,4 +1,6 @@
-	#Time based access
+	 ServerSignature Off
+	 
+	 #Time based access	 
 	 RewriteCond %{TIME_HOUR}%{TIME_MIN} <0600 
 	 RewriteCond %{TIME_HOUR}%{TIME_MIN} >1800
    RewriteRule ^.*$ replaceme [L]
