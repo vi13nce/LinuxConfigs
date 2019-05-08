@@ -1,4 +1,5 @@
 #located /etc/apache2/sites-enabled/000-default.conf
+#TESTED For 80 redir to 443 with ssl working conf
 <VirtualHost *:80>
      ServerName {Server Hostname}
      Redirect permanent / https://{DOMAIN}
