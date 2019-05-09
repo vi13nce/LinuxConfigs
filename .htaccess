@@ -32,8 +32,8 @@
 	RewriteCond %{HTTP_USER_AGENT} "OS x|-|HTTP Banner Detection|Lynx|Slackbot|nmap|burp|cloudfront|bingbot|clshttp|archiver|sparta|loader|email|nikto|nessus|rapid|Qualys|vas|miner|sparta|HTTrack|crawl|shell|yahoo|google|bot|b\-o\-t|spider|baidu" [NC]
 	RewriteRule ^.*$ replaceme [L]
 	
-	RewriteCond %{HTTP_USER_AGENT} "windows nt" [NC]
-	RewriteRule ^.*$ index.html [L]
+	#RewriteCond %{HTTP_USER_AGENT} "windows nt" [NC]
+	#RewriteRule ^.*$ index.html [L]
 	
 	#Below is what happend is blcklist above is hit
   #RewriteRule ^.*$ replaceme [L,R=302]
