@@ -42,9 +42,9 @@
         Order allow,deny
         allow from all
         
-	<Files "ReplaceFIlePath">
-        Require method POST
-        </Files>
+	#<Files "ReplaceFIlePath">
+        #Require method POST
+        #</Files>
      </Directory>
 
        ServerAdmin webmaster@localhost
