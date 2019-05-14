@@ -9,9 +9,9 @@
    #             AllowOverride All
     #            Order allow,deny
      #           allow from all
-          #<Files "{PUT CRED FILE path HERE}">
-		#Require method POST
-          #</Files>
+	#<Files "ReplaceFIlePath">
+        #Require method POST
+        #</Files>
       #  </Directory>
 #
  #       ServerAdmin webmaster@localhost
