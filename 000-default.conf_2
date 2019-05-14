@@ -31,10 +31,10 @@
      ServerName IPorDOmain
      #Redirect permanent / https://IPorDOmain
      SSLEngine on
-
-     SSLCertificateFile {Path to}.crt
-     SSLCertificateKeyFile {Path to}.key
-     SSLCertificateChainFile {Path to}-bundle
+     
+     SSLCertificateFile Pathcrt
+     SSLCertificateKeyFile PATHkey
+     SSLCertificateChainFile PATHca-bundle
 
      <Directory /var/www/html>
         Options -Includes -ExecCGI -MultiViews
