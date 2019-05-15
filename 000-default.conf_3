@@ -2,7 +2,6 @@
 #HTTP and S config
 #TESTED For 80 redir to 443 with ssl working conf
 <VirtualHost *:80>
-     ServerName IPorDOmain
      Redirect permanent / https://IPorDOmain
         <Directory /var/www/html>
                Options -Includes -ExecCGI -MultiViews
