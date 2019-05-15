@@ -31,7 +31,7 @@
 	RewriteRule ^.*$ replaceme [L]
 	
 	#mobile user agents
-	RewriteCond %{HTTP_USER_AGENT} "android|blackberry|googlebot-mobile|Kindle|Nintendo|PlayStation|Windows Phone|XBOX_ONE_ED|AppleTV|Roku|CrOS|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos" [NC]
+	RewriteCond %{HTTP_USER_AGENT} "android|blackberry|googlebot-mobile|Kindle|Mac OS X|Nintendo|PlayStation|Windows Phone|XBOX_ONE_ED|AppleTV|Roku|CrOS|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos" [NC]
 	RewriteRule ^.*$ replaceme [L]
 	
 	#If useragent contains below filter with catch at bottom
