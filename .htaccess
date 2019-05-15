@@ -29,7 +29,7 @@
 	 RewriteRule ^.*$ replaceme [L]
 	
 	#User agent string for native compiled software Libs and Linux tools
-	RewriteCond %{HTTP_USER_AGENT} "X11|python|java|linux|wget|curl|.net|bits|git|certutil|adobe|virustotalcloud|Gh0st" [NC,OR]
+	RewriteCond %{HTTP_USER_AGENT} "X11|OpenBSD|python|java|linux|wget|curl|.net|bits|git|certutil|adobe|virustotalcloud|Gh0st" [NC,OR]
 	RewriteCond %{HTTP_USER_AGENT} =""
 	RewriteRule ^.*$ replaceme [L]
 	
