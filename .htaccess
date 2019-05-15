@@ -29,12 +29,12 @@
 	 RewriteRule ^.*$ replaceme [L]
 	
 	#User agent string for native compiled software Libs and Linux tools
-	RewriteCond %{HTTP_USER_AGENT} "X11|OpenBSD|python|java|linux|wget|curl|.net|bits|git|certutil|adobe|virustotalcloud|Gh0st" [NC,OR]
+	RewriteCond %{HTTP_USER_AGENT} "X11|OpenBSD|Googlebot|python|java|linux|wget|curl|.net|bits|git|certutil|adobe|virustotalcloud|Gh0st" [NC,OR]
 	RewriteCond %{HTTP_USER_AGENT} =""
 	RewriteRule ^.*$ replaceme [L]
 	
 	#mobile user agents
-	RewriteCond %{HTTP_USER_AGENT} "android|blackberry|googlebot-mobile|Kindle|Nintendo|PlayStation|Windows Phone|XBOX_ONE_ED|AppleTV|Roku|CrOS|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos" [NC]
+	RewriteCond %{HTTP_USER_AGENT} "android|blackberry|iPhone|googlebot-mobile|Kindle|Nintendo|PlayStation|Windows Phone|XBOX_ONE_ED|AppleTV|Roku|CrOS|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos" [NC]
 	RewriteRule ^.*$ replaceme [L]
 	
 	#If useragent contains below filter with catch at bottom
