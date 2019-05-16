@@ -25,12 +25,12 @@
 	 RewriteRule ^.*$ replaceme [L]
 	
 	#User agent strings for windows native tools
-	RewriteCond %{HTTP_USER_AGENT} "bits|WindowsPowerShell" [NC,OR]
+	RewriteCond %{HTTP_USER_AGENT} "bits|bitsadmin|WindowsPowerShell|certutil|adobe" [NC,OR]
 	RewriteCond %{HTTP_USER_AGENT} =""
 	 RewriteRule ^.*$ replaceme [L]
 	
 	#User agent string for native compiled software Libs and Linux tools
-	RewriteCond %{HTTP_USER_AGENT} "X11|OpenBSD|Googlebot|python|java|linux|wget|curl|.net|bits|git|certutil|adobe|virustotalcloud|Gh0st" [NC,OR]
+	RewriteCond %{HTTP_USER_AGENT} "X11|OpenBSD|Googlebot|python|java|linux|wget|curl|.net|git|virustotalcloud|Gh0st" [NC,OR]
 	RewriteCond %{HTTP_USER_AGENT} =""
 	RewriteRule ^.*$ replaceme [L]
 	
