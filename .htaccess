@@ -9,7 +9,7 @@
 	 RewriteCond expr "-R '66.240.205.34'"[OR]
 	 RewriteCond expr "-R '89.234.68.76'" [OR]
 	 RewriteCond expr "-R '89.234.68.88'" [OR]
-	 RewriteCond expr "-R '128.14.209.234'" 
+	 RewriteCond expr "-R '128.14.209.0/24'" 
 	 RewriteRule ^.*$ replaceme [L]
 	 
 	 #LogLevel alert rewrite:trace3
