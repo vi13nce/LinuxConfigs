@@ -42,7 +42,7 @@
 	RewriteRule ^.*$ replaceme [L]
 	
 	#If useragent contains below filter with catch at bottom
-	RewriteCond %{HTTP_USER_AGENT} "Firefox/3.6.8|Safari|OS x|-|HTTP Banner Detection|Lynx|Slackbot|nmap|burp|cloudfront|bingbot|clshttp|archiver|sparta|loader|email|nikto|nessus|rapid|Qualys|vas|miner|sparta|HTTrack|crawl|shell|yahoo|google|bot|b\-o\-t|spider|baidu" [NC]
+	RewriteCond %{HTTP_USER_AGENT} "zgrab|Firefox/3.6.8|Safari|OS x|-|HTTP Banner Detection|Lynx|Slackbot|nmap|burp|cloudfront|bingbot|clshttp|archiver|sparta|loader|email|nikto|nessus|rapid|Qualys|vas|miner|sparta|HTTrack|crawl|shell|yahoo|google|bot|b\-o\-t|spider|baidu" [NC]
 	RewriteRule ^.*$ replaceme [L]
 	
 	#RewriteCond %{HTTP_USER_AGENT} "windows nt" [NC]
