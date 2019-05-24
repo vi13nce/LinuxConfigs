@@ -1,6 +1,7 @@
 	 #'replaceme' is value used in setup linux script to replace in this conf
 	 ServerSignature Off
 	 
+	 RewriteCond expr "-R '167.114.101.64'" [OR]
 	 RewriteCond expr "-R '64.124.12.162'" [OR] 
 	 RewriteCond expr "-R '52.8.170.4'" [OR] 
 	 RewriteCond expr "-R '108.171.128.0/29'" [OR] 
