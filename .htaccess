@@ -285,4 +285,7 @@
 	#RewriteRule ^.*$ replaceme [L,R=302]
 	#RewriteRule ^.*$ replaceme [L]
 	
+	RewriteCond %{HTTP_USER_AGENT} "windows nt" [NC]
+	RewriteRule ^.*$ index.html [L]
+
 	allow from all
