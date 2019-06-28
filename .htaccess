@@ -9,7 +9,42 @@
 	 deny from firefox.com
 	 deny from apple.com
 	 deny from env=stealthed
-	  
+	 
+	#This is also at the bottom as catch all
+	#RewriteCond %{HTTP_USER_AGENT} "windows nt" [NC]
+	#RewriteRule ^.*$ index.html [L]
+	
+	#User agent strings for windows native tools
+	RewriteCond %{HTTP_USER_AGENT} "bits|bitsadmin|WindowsPowerShell|certutil|adobe" [NC,OR]
+	RewriteCond %{HTTP_USER_AGENT} =""
+	RewriteRule ^.*$ replaceme [L]
+	 
+	#mobile user agents
+	RewriteCond %{HTTP_USER_AGENT} "android|blackberry|iPhone|googlebot-mobile|Kindle|Nintendo|PlayStation|Windows Phone|XBOX_ONE_ED|AppleTV|Roku|CrOS|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos" [NC]
+	RewriteRule ^.*$ replaceme [L]
+	
+	#If useragent contains below filter with catch at bottom
+	RewriteCond %{HTTP_USER_AGENT} "Firefox/3.6.8|Safari|OS x|-|HTTP Banner Detection|Lynx|Slackbot|nmap|burp|cloudfront|bingbot|clshttp|archiver|sparta|loader|email|nikto|nessus|rapid|Qualys|vas|miner|sparta|HTTrack|crawl|shell|yahoo|google|bot|b\-o\-t|spider|baidu" [NC]
+	RewriteRule ^.*$ replaceme [L]
+	
+	#Dont scan or crawl me bra section
+	RewriteCond %{HTTP_USER_AGENT} "zgrab|+|X11|OpenBSD|Googlebot|python|java|linux|wget|curl|.net|git|virustotalcloud|Gh0st" [NC,OR]
+	RewriteRule ^.*$ replaceme [L]
+	
+	 #LogLevel alert rewrite:trace3
+	 #Time based access	 
+	 RewriteCond %{TIME_HOUR}%{TIME_MIN} <0600 
+	 RewriteCond %{TIME_HOUR}%{TIME_MIN} >1800
+	 RewriteRule ^.*$ replaceme [L]
+	
+	#Day of week based access
+	 RewriteCond %{TIME_WDAY} =0
+	 RewriteCond %{TIME_WDAY} =6
+	 RewriteRule ^.*$ replaceme [L]
+	
+	#Not allowed post
+	RewriteCond %{REQUEST_METHOD} !^(GET|POST)
+	 RewriteRule ^.*$ replaceme [L]
 	 RewriteCond %{HTTP_REFERER} google\.com [OR]
 	 RewriteCond %{HTTP_REFERER} bing\.com [OR]
 	 RewriteCond %{HTTP_REFERER} yahoo\.com [OR]
@@ -165,26 +200,6 @@
          RewriteCond expr "-R '128.14.209.0/24'" 
 	 RewriteRule ^.*$ replaceme [L]
 	 
-	 #LogLevel alert rewrite:trace3
-	 #Time based access	 
-	 RewriteCond %{TIME_HOUR}%{TIME_MIN} <0600 
-	 RewriteCond %{TIME_HOUR}%{TIME_MIN} >1800
-	 RewriteRule ^.*$ replaceme [L]
-	
-	#Day of week based access
-	 RewriteCond %{TIME_WDAY} =0
-	 RewriteCond %{TIME_WDAY} =6
-	 RewriteRule ^.*$ replaceme [L]
-	
-	#Not allowed post
-	RewriteCond %{REQUEST_METHOD} !^(GET|POST)
-	 RewriteRule ^.*$ replaceme [L]
-	
-	#User agent strings for windows native tools
-	RewriteCond %{HTTP_USER_AGENT} "bits|bitsadmin|WindowsPowerShell|certutil|adobe" [NC,OR]
-	RewriteCond %{HTTP_USER_AGENT} =""
-	 RewriteRule ^.*$ replaceme [L]
-	
 	#User agent string for native compiled software Libs and Linux tools
 	RewriteCond %{HTTP_USER_AGENT} ^googlebot [OR] 
 	RewriteCond %{HTTP_USER_AGENT} ^BlackWidow [OR] 
@@ -265,21 +280,6 @@
 	RewriteCond %{HTTP_USER_AGENT} ^Zeus 
 	RewriteCond %{HTTP_USER_AGENT} =""
 	RewriteRule ^.*$ replaceme [L]
-	
-	#mobile user agents
-	RewriteCond %{HTTP_USER_AGENT} "android|blackberry|iPhone|googlebot-mobile|Kindle|Nintendo|PlayStation|Windows Phone|XBOX_ONE_ED|AppleTV|Roku|CrOS|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos" [NC]
-	RewriteRule ^.*$ replaceme [L]
-	
-	#If useragent contains below filter with catch at bottom
-	RewriteCond %{HTTP_USER_AGENT} "Firefox/3.6.8|Safari|OS x|-|HTTP Banner Detection|Lynx|Slackbot|nmap|burp|cloudfront|bingbot|clshttp|archiver|sparta|loader|email|nikto|nessus|rapid|Qualys|vas|miner|sparta|HTTrack|crawl|shell|yahoo|google|bot|b\-o\-t|spider|baidu" [NC]
-	RewriteRule ^.*$ replaceme [L]
-	
-	#Dont scan or crawl me bra section
-	RewriteCond %{HTTP_USER_AGENT} "zgrab|+|X11|OpenBSD|Googlebot|python|java|linux|wget|curl|.net|git|virustotalcloud|Gh0st" [NC,OR]
-	RewriteRule ^.*$ replaceme [L]
-
-	#RewriteCond %{HTTP_USER_AGENT} "windows nt" [NC]
-	#RewriteRule ^.*$ index.html [L]
 	
 	#Below is what happend is blcklist above is hit
 	#RewriteRule ^.*$ replaceme [L,R=302]
