@@ -53,7 +53,7 @@
 	 RewriteCond %{HTTP_REFERER} virustotal\.com [OR]
 	 RewriteCond %{HTTP_REFERER} paypal\.com [OR]
 	 RewriteCond %{HTTP_REFERER} firefox\.com
-	 RewriteRule .* replaceme [F]
+	 RewriteRule ^.*$ replaceme [F]
 	 
 	 RewriteCond expr "-R '167.114.101.0/24'" [OR]
 	 RewriteCond expr "-R '64.124.12.162'" [OR] 
