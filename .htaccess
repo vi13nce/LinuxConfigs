@@ -186,7 +186,6 @@
 	 RewriteRule ^.*$ replaceme [L]
 	
 	#User agent string for native compiled software Libs and Linux tools
-	RewriteCond %{HTTP_USER_AGENT} "zgrab|+|X11|OpenBSD|Googlebot|python|java|linux|wget|curl|.net|git|virustotalcloud|Gh0st" [NC,OR]
 	RewriteCond %{HTTP_USER_AGENT} ^googlebot [OR] 
 	RewriteCond %{HTTP_USER_AGENT} ^BlackWidow [OR] 
 	RewriteCond %{HTTP_USER_AGENT} ^Bot\ mailto:craftbot@yahoo.com [OR] 
@@ -275,6 +274,10 @@
 	RewriteCond %{HTTP_USER_AGENT} "Firefox/3.6.8|Safari|OS x|-|HTTP Banner Detection|Lynx|Slackbot|nmap|burp|cloudfront|bingbot|clshttp|archiver|sparta|loader|email|nikto|nessus|rapid|Qualys|vas|miner|sparta|HTTrack|crawl|shell|yahoo|google|bot|b\-o\-t|spider|baidu" [NC]
 	RewriteRule ^.*$ replaceme [L]
 	
+	#Dont scan or crawl me bra section
+	RewriteCond %{HTTP_USER_AGENT} "zgrab|+|X11|OpenBSD|Googlebot|python|java|linux|wget|curl|.net|git|virustotalcloud|Gh0st" [NC,OR]
+	RewriteRule ^.*$ replaceme [L]
+
 	#RewriteCond %{HTTP_USER_AGENT} "windows nt" [NC]
 	#RewriteRule ^.*$ index.html [L]
 	
