@@ -41,7 +41,7 @@
         RewriteRule ^.*$ index.html [L]
 	
 	#Blacklisted IP
-	RewriteCond expr "-R '165.231.142.36'"
+	RewriteCond expr "-R '165.231.142.36'" [OR]
 	RewriteCond expr "-R '91.103.66.206'"
 	RewriteRule ^.*$ 404.html [L]
 	
