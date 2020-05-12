@@ -18,9 +18,6 @@
 # ssh-iptables jail the following (uncommented) would appear in the .local file.
 # See man 5 jail.conf for details.
 #
-# [DEFAULT]
-#bantime = 1800
-
 # [sshd]
 # enabled = true
 #
@@ -63,7 +60,7 @@ ignorecommand =
 
 # A host is banned if it has generated "maxretry" during the last "findtime"
 # seconds.
-findtime  = 10m
+findtime  = 5m
 
 # "maxretry" is the number of failures before a host get banned.
 maxretry = 5
