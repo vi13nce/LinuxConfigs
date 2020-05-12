@@ -19,8 +19,8 @@
 # See man 5 jail.conf for details.
 #
 # [DEFAULT]
-bantime = 12h
-#
+#bantime = 1800
+
 # [sshd]
 # enabled = true
 #
@@ -40,7 +40,8 @@ before = paths-debian.conf
 # in each jail afterwards.
 
 [DEFAULT]
-bantime = 1800
+# "bantime" is the number of seconds that a host is banned.
+bantime = 12h
 #
 # MISCELLANEOUS OPTIONS
 #
@@ -59,9 +60,6 @@ bantime = 1800
 #
 # ignorecommand = /path/to/command <ip>
 ignorecommand =
-
-# "bantime" is the number of seconds that a host is banned.
-bantime  = 12h
 
 # A host is banned if it has generated "maxretry" during the last "findtime"
 # seconds.
@@ -276,7 +274,7 @@ enabled = true
 port = http,https
 filter = apache-404
 logpath = %(apache_error_log)s
-logpath = %(apache_access_log)s
+          %(apache_access_log)s
 bantime = 3600
 findtime = 600
 maxretry = 5
@@ -375,9 +373,7 @@ maxretry = 2
 [php-url-fopen]
 enabled = true
 port    = http,https
-logpath = %(nginx_access_log)s
-          %(apache_access_log)s
-
+logpath = %(apache_access_log)s
 
 [suhosin]
 filter  = php-url-fopen
