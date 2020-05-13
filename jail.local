@@ -39,7 +39,7 @@ before = paths-debian.conf
 
 [DEFAULT]
 # "bantime" is the number of seconds that a host is banned.
-bantime = 12h
+bantime = 3600
 #
 # MISCELLANEOUS OPTIONS
 #
