@@ -28,7 +28,7 @@
   # Authentication:
   #PubkeyAuthentication yes
   # To disable tunneled clear text passwords, change to no here!
-  PasswordAuthentication yes
+  PasswordAuthentication no
   PermitEmptyPasswords no
 
   # Set this to yes to enable PAM authentication, account processing,
@@ -40,12 +40,12 @@
   # If you just want the PAM account and session checks to run without
   # PAM authentication, then enable this but set PasswordAuthentication
   # and ChallengeResponseAuthentication to no.
-  UsePAM no
+  UsePAM yes
 
   #LoginGraceTime 2m
-  PermitRootLogin no
+  PermitRootLogin yes
   #StrictModes yes
-  MaxAuthTries 6
+  MaxAuthTries 5
   MaxSessions 2
 
   # Expect .ssh/authorized_keys2 to be disregarded by default in future.
@@ -80,8 +80,8 @@
   #GSSAPIStrictAcceptorCheck yes
   #GSSAPIKeyExchange no
 
-  #AllowAgentForwarding yes
-  #AllowTcpForwarding yes
+  AllowAgentForwarding no
+  AllowTcpForwarding no
   #GatewayPorts no
   X11Forwarding no
   #X11DisplayOffset 10
@@ -89,7 +89,7 @@
   #PermitTTY yes
   PrintMotd yes
   PrintLastLog yes
-  #TCPKeepAlive yes
+  TCPKeepAlive no
   #UseLogin no
   #PermitUserEnvironment no
   #Compression delayed
@@ -114,6 +114,6 @@
   # Example of overriding settings on a per-user basis
   #Match User anoncvs
   #	X11Forwarding no
-    #	AllowTcpForwarding no
+ #	AllowTcpForwarding no
   #	PermitTTY no
   #	ForceCommand cvs server
