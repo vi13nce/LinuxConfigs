@@ -45,9 +45,9 @@
 	SSLProxyCheckPeerName off
 	SSLProxyCheckPeerExpire off
 	
-	SSLCertificateFile %Path_crt%
-        SSLCertificateKeyFile %PATH_key%
-        SSLCertificateChainFile %PATH_ca-bundle%
+	SSLCertificateFile Path_crt
+        SSLCertificateKeyFile PATH_key
+        SSLCertificateChainFile PATH_ca-bundle
 	
      <Directory /var/www/html>
         Options -Includes -ExecCGI -MultiViews
