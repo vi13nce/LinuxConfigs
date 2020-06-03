@@ -55,7 +55,7 @@
     #[*] The path to the SSL/TLS files
     SSLCertificateFile Path_to_crt
     SSLCertificateKeyFile PATH_to_Private_key
-    SSLCertificateChainFile PATH_to_ca-bundle
+    SSLCertificateChainFile PATH_to_ca_bundle
 	
     <Directory /var/www/html>
         Options -Includes -ExecCGI -MultiViews
