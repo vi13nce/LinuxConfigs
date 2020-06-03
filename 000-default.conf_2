@@ -2,23 +2,24 @@
 #HTTPS ONLY CONF
 #TESTED For 80 redir to 443 with ssl working conf
 <VirtualHost *:80>
-     ServerName ReplaceServerName
-     #Redirect permanent / %https://ReDirIPorDomain%
+     #ServerName ReplaceServerName
+     #To do a HTTP->HTTPS Redirect on Apache Replace the value below
+     #Redirect permanent / https://ReDir_IP_or_Domain
         #<Directory /var/www/html>
                 #Options -Includes -ExecCGI -MultiViews
                 #AllowOverride All
                 #Order allow,deny
-		 #allow from all
+                #allow from all
      		#<LimitExcept GET POST>
 		#deny from all
 		#</LimitExcept>		
-      #  </Directory>
-#
- #       ServerAdmin webmaster@localhost
-  #      DocumentRoot /var/www/html
-        #LogLevel rewrite trace6
-#        ErrorLog ${APACHE_LOG_DIR}/error.log
- #       CustomLog ${APACHE_LOG_DIR}/access.log combined
+      #</Directory>
+
+    #ServerAdmin webmaster@localhost
+    #DocumentRoot /var/www/html
+    #LogLevel rewrite trace6
+    #ErrorLog ${APACHE_LOG_DIR}/error.log
+    #CustomLog ${APACHE_LOG_DIR}/access.log combined
  
 	#<Files "ReplaceFIlePath">
         #Require method POST
@@ -26,46 +27,51 @@
 </VirtualHost>
 
 
-#RUN 'a2enmod ssl'
+#RUN 'a2enmod ssl' to enable SSL/TLS Manually
 #RUN sudo hostnamectl set-hostname {DOMAIN} (if needed)
-# Setup global fqdn apache  'sudo echo "ServerName {Server hostname}" | sudo tee /etc/apache2/conf-available/fqdn.conf '
+#Setup global fqdn apache  'sudo echo "ServerName {Server hostname}" | sudo tee /etc/apache2/conf-available/fqdn.conf '
 #Check config syntax 'apache2ctl configtest'
 <VirtualHost *:443>
-     ServerName ReplaceServerName
-     #Redirect permanent / %https://ReDirIPorDomain%
-	# Enable SSL
-	SSLEngine On
+    #ServerName ReplaceServerName
+    #Redirect permanent / https://ReDir_IP_or_Domain
+
+    # Enable SSL
+    SSLEngine On
 	
 	# Enable SSL Proxy
 	SSLProxyEngine On
 	
-	# Trust Self-Signed Certificates generated
+	# Trust Self-Signed Certificates generated on final dest 
 	SSLProxyVerify none
 	SSLProxyCheckPeerCN off
 	SSLProxyCheckPeerName off
 	SSLProxyCheckPeerExpire off
 	
-	SSLCertificateFile Path_crt
-        SSLCertificateKeyFile PATH_key
-        SSLCertificateChainFile PATH_ca-bundle
+    #The path to the SSL/TLS files
+    SSLCertificateFile Path_to_crt
+    SSLCertificateKeyFile PATH_to_Private_key
+    SSLCertificateChainFile PATH_to_ca-bundle
 	
-     <Directory /var/www/html>
+    <Directory /var/www/html>
         Options -Includes -ExecCGI -MultiViews
         AllowOverride All
         Order allow,deny
-	allow from all
-        <LimitExcept GET POST>
-	deny from all
-	</LimitExcept>
-     </Directory>
+        allow from all
 
-       ServerAdmin webmaster@localhost
-       DocumentRoot /var/www/html
+    <LimitExcept GET POST>
+        deny from all
+	</LimitExcept>
+
+    </Directory>
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html
         #LogLevel rewrite trace6
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 	
-	#<Files "ReplaceFIlePath">
+    #Uncomment section below to make a file on the system accessable by the web service HTTP POST ONLY
+	#<Files "FILE_Path_To_POST_only_File">
         #Require method POST
-        #</Files>
-  </VirtualHost>
+    #</Files>
+
+</VirtualHost>
