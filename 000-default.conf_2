@@ -3,8 +3,10 @@
 #[*] TESTED For 80 redir to 443 with ssl working conf
 <VirtualHost *:80>
      #ServerName Replace_Server_Name
+     
      #[*] Setting below is for HTTP->HTTPS Redirect on Apache Replace the value below
      #Redirect permanent / https://ReDir_IP_or_Domain
+     
         #<Directory /var/www/html>
                 #Options -Includes -ExecCGI -MultiViews
                 #AllowOverride All
@@ -35,6 +37,7 @@
 <VirtualHost *:443>
     #[*] Replace Setting below to set hostname to use in Apache once its changes in server settings
     #ServerName Replace_Server_Name
+    
     #Redirect permanent / https://ReDir_IP_or_Domain
 
     #[*] Enable SSL
