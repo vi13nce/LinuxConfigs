@@ -1,9 +1,9 @@
 #located /etc/apache2/sites-enabled/000-default.conf
-#HTTP config
+#HTTP Only config
 #TESTED For 80 redir to 443 with ssl working conf
 <VirtualHost *:80>
 	ServerName ReplaceServerName
-     #Redirect permanent / %https://ReDirIPorDomain%
+       #Redirect permanent / %https://ReDirIPorDomain%
         <Directory /var/www/html>
                Options -Includes -ExecCGI -MultiViews
                 AllowOverride All
