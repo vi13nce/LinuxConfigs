@@ -1,7 +1,7 @@
-        #Based on:https://gist.github.com/curi0usJack/971385e8334e189d93a6cb4671238b10 and https://bluescreenofjeff.com
-        #Change with sudo sed -i -e 's/{TERM TO LOOK FOR}/{TERM TO REPLACE WITH}/g'
-        #Also if you dont want the whitelist page to be replaceme_Allowed you need to sed change that also
-        #REF: https://bluescreenofjeff.com/2016-12-23-apache_mod_rewrite_grab_bag/
+	#Location: /var/www/html/.htaccess
+	#REF: https://bluescreenofjeff.com/2016-12-23-apache_mod_rewrite_grab_bag/
+	#REF: https://gist.github.com/Meatballs1/fe50ad25ef6e0225f8b1f7f84aa37d83
+	#REF: https://gist.github.com/curi0usJack/971385e8334e189d93a6cb4671238b10
 	
 	#Change variable below to change where allowed traffic goes or approved C2 traffic
 	Define REDIR_APPROVED_TARGET replaceme_Allowed
@@ -9,6 +9,7 @@
 	#Change variable below to change where disallowed traffic goes or NOT approved C2 traffic
 	Define REDIR_BAD_TRAFFIC replaceme_NOTAllowed
 	
+	#ADVANCED MODIFIACTION ONLY below
         RewriteEngine on
         RewriteOptions Inherit
         ServerSignature Off
