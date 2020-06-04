@@ -16,7 +16,7 @@
 		
         #Forcing HTTPS
         #RewriteCond %{HTTPS} !=on [NC]
-        #RewriteRule ^.*$ https://replaceme%{REQUEST_URI} [L,R=301]
+        #RewriteRule ^.*$ https://replaceme_Allowed%{REQUEST_URI} [L,R=301]
 	
         ## Uncomment to enable verbose debugging in /var/logs/apache2/error.log
         #LogLevel alert rewrite:trace5
@@ -67,7 +67,7 @@
         RewriteCond %{HTTP_USER_AGENT} "Windows NT" [NC]
         #RewriteCond %{HTTP_COOKIE} {COOKIE_VALUE_TO_ALLOW}
 	#RewriteRule ^.*$ "http://replaceme_Allowed%{REQUEST_URI}" [P,L]
-        RewriteRule ^.*$ "replaceme_Allowed%{REQUEST_URI}" [P,L]
+        RewriteRule ^.*$ "https://replaceme_Allowed%{REQUEST_URI}" [P,L]
 		
         #ErrorDocument 500 404.html
         #ErrorDocument 403 404.html
