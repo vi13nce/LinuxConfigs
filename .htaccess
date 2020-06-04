@@ -92,4 +92,4 @@
 
         ErrorDocument 404 %{REQUEST_SCHEME}://${REDIR_BAD_TRAFFIC}%
 		
-        RewriteRule ^.*$ 404.html [L]
+        RewriteRule ^.*$ %{REQUEST_SCHEME}://${REDIR_BAD_TRAFFIC}% [L]
