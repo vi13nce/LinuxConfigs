@@ -3,7 +3,6 @@
 	#REF: https://gist.github.com/Meatballs1/fe50ad25ef6e0225f8b1f7f84aa37d83
 	#REF: https://gist.github.com/curi0usJack/971385e8334e189d93a6cb4671238b10
 	
-	#ADVANCED MODIFIACTION ONLY below
         RewriteEngine on
         RewriteOptions Inherit
         ServerSignature Off
