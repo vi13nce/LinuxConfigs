@@ -67,7 +67,7 @@
         RewriteCond %{REQUEST_URI} ^(/URI_TO_ALLOW.*)$ [NC]
         RewriteCond %{HTTP_USER_AGENT} "Windows NT" [NC]
         #RewriteCond %{HTTP_COOKIE} {COOKIE_VALUE_TO_ALLOW}
-	RewriteRule ^.*$ "%{REQUEST_SCHEME}://replaceme_Allowed%{REQUEST_URI}" [P,L]
+	RewriteRule ^.*$ "%{REQUEST_SCHEME}://replaceme_C2_Allowed%{REQUEST_URI}" [P,L]
 		
         #ErrorDocument 500 replaceme_NOTAllowed
         #ErrorDocument 403 replaceme_NOTAllowed
