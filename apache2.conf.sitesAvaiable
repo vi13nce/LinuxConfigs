@@ -1,4 +1,4 @@
-#Location: /etc/apache2/apache2.conf
+#Location: /etc/apache2/sites-avaiable/apache2.conf
 # This is the main Apache server configuration file.  It contains the
 # configuration directives that give the server its instructions.
 # See http://httpd.apache.org/docs/2.4/ for detailed information about
