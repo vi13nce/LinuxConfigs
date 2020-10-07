@@ -6,7 +6,8 @@
         RewriteEngine on
         RewriteOptions Inherit
         ServerSignature Off
-        
+        Options -Indexes
+	
         #FallbackResource replaceme_NOTAllowed
 		
         RewriteCond %{REQUEST_METHOD} !^(GET|POST)
