@@ -170,7 +170,7 @@ Include ports.conf
 </Directory>
 
 <Directory /var/www/>
-        Options -Includes -ExecCGI -MultiViews
+        Options -Includes -ExecCGI -MultiViews -Indexes
         AllowOverride All
         Require all granted
 </Directory>
