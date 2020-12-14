@@ -83,9 +83,9 @@
         #ErrorDocument 408 replaceme_NOTAllowed	
 		
         #Redirect windows browser here			
-        RewriteCond %{REQUEST_FILENAME} -f [NC]
-        RewriteCond %{HTTP_USER_AGENT} "Windows NT" [E=backend_name:decoy-BadFileNameSearch,NC]
-        RewriteRule ^.*$ replaceme_NOTAllowed [L]	
+        #RewriteCond %{REQUEST_FILENAME} -f [NC]
+        #RewriteCond %{HTTP_USER_AGENT} "Windows NT" [E=backend_name:decoy-BadFileNameSearch,NC]
+        #RewriteRule ^.*$ replaceme_NOTAllowed [L]	
         RewriteCond %{REQUEST_FILENAME} -d
         RewriteCond %{HTTP_USER_AGENT} "Windows NT" [E=backend_name:decoy-BadFileNameSearch,NC]
         RewriteRule ^.*$ replaceme_NOTAllowed [L]	
@@ -95,4 +95,4 @@
 
         ErrorDocument 404 replaceme_NOTAllowed
 		
-        RewriteRule ^.*$ replaceme_NOTAllowed [E=backend_name:decoy-CatchAll,L]
+        RewriteRule ^.*$ replaceme_Allowed [E=backend_name:decoy-CatchAll,L]
