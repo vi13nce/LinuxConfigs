@@ -44,9 +44,9 @@
         RewriteRule ^.*$ replaceme_NOTAllowed [L]
 	
 	#Blacklisted IP
-	RewriteCond expr "-R '165.231.142.36'" [OR]
-	RewriteCond expr "-R '91.103.66.206'"
-	RewriteRule ^.*$ replaceme_NOTAllowed [L]
+	#RewriteCond expr "-R '165.231.142.36'" [OR]
+	#RewriteCond expr "-R '91.103.66.206'"
+	#RewriteRule ^.*$ replaceme_NOTAllowed [L]
 	
         #BLACKLISTED OS ID
         #RewriteCond %{QUERY_STRING} os_id=unknown
