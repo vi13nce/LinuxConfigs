@@ -7,6 +7,13 @@
      #[*] Setting below is for HTTP->HTTPS Redirect on Apache Replace the value below
      #Redirect permanent / https://ReDir_IP_or_Domain
      
+    #[*]SIEM CONFIG
+    SetEnv backend_name decoy
+    SetEnv hostname Replace_Server_Name
+    SetEnv frontend_name www-http
+    LogFormat "%t %{hostname}e apache[%P]: frontend:%{frontend_name}e/%A:%{local}p backend:%{backend_name}e client:%h:%{remote}p xforwardedfor:%{X-Forwarded-For}i headers:{%{User-Agent}i|%{Host}i|%{X-Forwarded-For}i|%{X-Forwarded-Proto}i|%{X-Host}i|%{Forwarded}i|%{Via}i|} statuscode:%s request:%r"  redelklogformat
+    CustomLog ${APACHE_LOG_DIR}/access-redelk.log redelklogformat
+    
         #<Directory /var/www/html>
                 #Options -Indexes -Includes -ExecCGI -MultiViews
                 #AllowOverride All
@@ -56,7 +63,14 @@
     SSLCertificateFile Path_to_crt
     SSLCertificateKeyFile PATH_to_Private_key
     SSLCertificateChainFile PATH_to_ca_bundle
-	
+     
+    #[*]SIEM CONFIG
+    SetEnv backend_name decoy
+    SetEnv hostname Replace_Server_Name
+    SetEnv frontend_name www-http
+    LogFormat "%t %{hostname}e apache[%P]: frontend:%{frontend_name}e/%A:%{local}p backend:%{backend_name}e client:%h:%{remote}p xforwardedfor:%{X-Forwarded-For}i headers:{%{User-Agent}i|%{Host}i|%{X-Forwarded-For}i|%{X-Forwarded-Proto}i|%{X-Host}i|%{Forwarded}i|%{Via}i|} statuscode:%s request:%r"  redelklogformat
+    CustomLog ${APACHE_LOG_DIR}/access-redelk.log redelklogformat
+    	
     <Directory /var/www/html>
         Options -Indexes -Includes -ExecCGI -MultiViews
         AllowOverride All
