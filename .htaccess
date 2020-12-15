@@ -84,14 +84,14 @@
 		
         #Redirect windows browser here			
         #RewriteCond %{REQUEST_FILENAME} -f [NC]
-        #RewriteCond %{HTTP_USER_AGENT} "Windows NT" [E=backend_name:decoy-BadFileNameSearch,NC]
-        #RewriteRule ^.*$ replaceme_Allowed [L]	
+        #RewriteCond %{HTTP_USER_AGENT} "Windows NT" [NC]
+        #RewriteRule ^.*$ replaceme_Allowed [E=backend_name:decoy-BadFileNameSearch,L]	
         RewriteCond %{REQUEST_FILENAME} -d
-        RewriteCond %{HTTP_USER_AGENT} "Windows NT" [E=backend_name:decoy-BadFileNameSearch,NC]
-        RewriteRule ^.*$ replaceme_NOTAllowed [L]	
+        RewriteCond %{HTTP_USER_AGENT} "Windows NT" [NC]
+        RewriteRule ^.*$ replaceme_NOTAllowed [E=backend_name:decoy-BadFileNameSearch,L]	
         RewriteCond %{REQUEST_FILENAME} -l
-        RewriteCond %{HTTP_USER_AGENT} "Windows NT" [E=backend_name:decoy-BadFileNameSearch,NC]
-        RewriteRule ^.*$ replaceme_NOTAllowed [L]	
+        RewriteCond %{HTTP_USER_AGENT} "Windows NT" [NC]
+        RewriteRule ^.*$ replaceme_NOTAllowed [E=backend_name:decoy-BadFileNameSearch,L]	
 
         ErrorDocument 404 replaceme_NOTAllowed
 		
