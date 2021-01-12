@@ -16,12 +16,12 @@
         Options -Indexes
 	
         #FallbackResource replaceme_NOTAllowed
-		
+	
+	RewriteCond %{REQUEST_METHOD} ^(HEAD|TRACE)
+        RewriteRule ^.*$ http://google.com [E=backend_name:decoy-BadHTTPMethodTraceOrHEAD,L,R=302]
+	
         RewriteCond %{REQUEST_METHOD} !^(GET|POST)
         RewriteRule ^.*$ http://google.com [E=backend_name:decoy-BadHTTPMethod,L,R=302]
-		
-        RewriteCond %{REQUEST_METHOD} ^(HEAD|TRACE)
-        RewriteRule ^.*$ http://google.com [E=backend_name:decoy-BadHTTPMethodTraceOrHEAD,L,R=302]
 		
         #Forcing HTTPS
         #RewriteCond %{HTTPS} !=on [NC]
