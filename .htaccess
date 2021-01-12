@@ -55,10 +55,10 @@
         RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-BadUSERAGENT_Exploiters,L]
 
 	#Blacklisted IP
-	#RewriteCond expr "-R '165.231.142.36'" [OR]
-	#RewriteCond expr "-R '91.103.66.206'" [OR]
-	#RewriteCond expr "-R '80.82.77.227'" 
-	#RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-BadIP,L]
+	RewriteCond expr "-R '165.231.142.36'" [OR]
+	RewriteCond expr "-R '91.103.66.206'" [OR]
+	RewriteCond expr "-R '80.82.77.227'" 
+	RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-BadIP,L]
 	
         #BLACKLISTED OS ID
         #RewriteCond %{QUERY_STRING} os_id=unknown
