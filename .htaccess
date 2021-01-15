@@ -46,7 +46,7 @@
         #RewriteRule ^.*$ replaceme_NOTAllowed [E=backend_name:decoy-BadTimeOrDate,L]
 
 	#BLACKLISTED USER AGENT STRING KNOWN TO SEND EXPLOITS
-	RewriteCond %{HTTP_USER_AGENT} "zgrab|<?"
+	RewriteCond %{HTTP_USER_AGENT} "zgrab|<"
         RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-BadUSERAGENT_Exploiters,L]
 	
 	#BlackList Epxloiters URI
