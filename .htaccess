@@ -50,7 +50,7 @@
         RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-BadUSERAGENT_Exploiters,L]
 	
 	#BlackList Epxloiters URI
-	RewriteCond %{REQUEST_URI} ^(/version.*|http:.*|/Telerik.*|/Index/.*|/Nmap.*|/console.*|/index.php?s.*|/logs.*|/vendor/phpunit.*|/dns-query?.*|/mifs.*|/.env.*|/robots.txt.*|/sitemap.xml.*|/.well-known.*|/Autodiscover/Autodiscover.xml.*|/wp-content/.*|/owa/auth/logon.asp.*)$ [NC]
+	RewriteCond %{REQUEST_URI} ^(/version.*|XDEBUG_SESSION_START.*|/invoke.*|/.git.*|/infophp.*|/php.*|sra_.*|http.*|owa.*|execute.*|/Telerik.*|/Index/.*|/Nmap.*|/console.*|/index.php?s.*|/logs.*|/vendor/phpunit.*|/dns-query?.*|/mifs.*|/.env.*|/robots.txt.*|/sitemap.xml.*|/.well-known.*|/Autodiscover/Autodiscover.xml.*|/wp-content/.*|/owa/auth/logon.asp.*)$ [NC]
 	RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-URI_Exploiters,L]
 	
         #BLACKLISTED USER AGENT STRINGS
@@ -60,9 +60,6 @@
 
 	#Blacklisted IP
 	RewriteCond expr "-R '165.231.142.36'" [OR]
-	RewriteCond expr "-R '91.103.66.206'" [OR]
-	RewriteCond expr "-R '80.82.77.227'" [OR]
-	RewriteCond expr "-R '198.20.124.218'" [OR]
 	RewriteCond expr "-R '45.155.205.108'"
 	RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-BadIP,L]
 	
