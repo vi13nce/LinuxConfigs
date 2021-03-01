@@ -38,12 +38,12 @@
         #RewriteCond %{TIME_HOUR}%{TIME_MIN} <0600
         #RewriteCond %{TIME_HOUR}%{TIME_MIN} >1800
         #RewriteRule ^.*$ replaceme_NOTAllowed [E=backend_name:decoy-BadTimeOrDate,L]
-        #RewriteRule ^.*$ replaceme_NOTAllowed [,L]
+        #RewriteRule ^.*$ - [R=404,E=backend_name:decoy-BadTimeOrDate,L]
 
         #Day of week based access
         #RewriteCond %{TIME_WDAY} =0
         #RewriteCond %{TIME_WDAY} =6
-        #RewriteRule ^.*$ replaceme_NOTAllowed [E=backend_name:decoy-BadTimeOrDate,L]
+	#RewriteRule ^.*$ - [R=404,E=backend_name:decoy-BadTimeOrDate,L]
 
 	#BLACKLISTED USER AGENT STRING KNOWN TO SEND EXPLOITS
 	RewriteCond %{HTTP_USER_AGENT} "zgrab|<|libwww-perl|Nexus|Python-urllib|curl|Go-http-client|Go http package|baidu"
@@ -56,7 +56,7 @@
         #BLACKLISTED USER AGENT STRINGS
         RewriteCond %{HTTP_USER_AGENT} "censys|facebookexternalhit|AWS Security Scanner|Go http package|security_txt_analysis|Go http package|libwww-perl|Banner|python-requests|CPython|CriOS|cloudfront|python|Ruby|Linux|Android|AliApp|.NET CLR|Media Center|HTTP|Nimbostratus-Bot|rv:x.x.x|.NET CLR|bits|googleweblight|WindowsPowerShell|.net|Headless|Headlesschrome|Windows NT 6.1|Ubuntu|Bot|python|python-requests|java|linux|wget|curl|CLR|OpenBSD|git|Go-http|Safari|Macintosh|OS X|Cisco|BingPreview|iPhone|android|Nexus|blackberry|googlebot-mobile|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos|kindel|kindal|SamsungBrowser|HeadlessChrome|DingTalk|compatible|Opera|zh-cn|Mac|InfoPath|MSIE|X11|Darwin|Presto|CampNet|adobe|BlackWidow|Banner|Dalvik|ChinaClaw|Custo|DISCo|eCatch|EirGrabber|EmailSiphon|EmailWolf|WebPictures|ExtractorPro|EyeNetIE|GetWeb|GetRight|Zeus|SiteSnagger|SuperBot|SuperHTTP|Surfbot|WebAuto|WebCopier|WebSpider|X11|Googlebot|virustotalcloud|Gh0st|OS x|Lynx|Slackbot|nmap|cloudfront|clshttp|archiver|sparta|loader|email|nikto|nessus|rapid|Qualys|vas|miner|HTTrack|crawl|shell|yahoo|google|bot|b\-o\-t|spider|baidu" [NC,OR]
         RewriteCond %{HTTP_USER_AGENT} =""
-        RewriteRule ^.*$ replaceme_NOTAllowed [E=backend_name:decoy-BadUSERAGENT,L]
+        RewriteRule ^.*$ http://google.com [E=backend_name:decoy-BadUSERAGENT,L]
 
 	#Blacklisted IP
 	RewriteCond expr "-R '165.231.142.36'" [OR]
