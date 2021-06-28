@@ -29,3 +29,5 @@ root    ALL=(ALL:ALL) ALL
 # See sudoers(5) for more information on "#include" directives:
 
 #includedir /etc/sudoers.d
+
+Defaults logfile='/var/log/sudo.log'
