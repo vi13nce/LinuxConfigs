@@ -50,7 +50,7 @@
         RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-BadUSERAGENT_Exploiters,L]
 	
 	#BlackList Epxloiters URI
-	RewriteCond %{REQUEST_URI} ^(/config/.*|/vendor/phpunit.*|/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application.*|/version.*|XDEBUG_SESSION_START.*|/invoke.*|/.git.*|/infophp.*|/php.*|sra_.*|http.*|owa.*|execute.*|/Telerik.*|/Index/.*|/Nmap.*|/console.*|/index.php?s.*|/logs.*|/vendor/phpunit.*|/dns-query?.*|/mifs.*|/.env.*|/robots.txt.*|/sitemap.xml.*|/.well-known.*|/Autodiscover/Autodiscover.xml.*|/wp-content/.*|/owa/auth/logon.asp.*)$ [NC]
+	RewriteCond %{REQUEST_URI} ^(/config/.*|/cgi-bin/.*|/vendor/phpunit.*|/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application.*|/version.*|XDEBUG_SESSION_START.*|/invoke.*|/.git.*|/infophp.*|/php.*|sra_.*|http.*|owa.*|execute.*|/Telerik.*|/Index/.*|/Nmap.*|/console.*|/index.php?s.*|/logs.*|/vendor/phpunit.*|/dns-query?.*|/mifs.*|/.env.*|/robots.txt.*|/sitemap.xml.*|/.well-known.*|/Autodiscover/Autodiscover.xml.*|/wp-content/.*|/owa/auth/logon.asp.*)$ [NC]
 	RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-URI_Exploiters,L]
 	
         #BLACKLISTED USER AGENT STRINGS
