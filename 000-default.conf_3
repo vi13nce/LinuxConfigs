@@ -21,6 +21,7 @@
 		allow from all
 		<LimitExcept GET POST>
 		deny from all
+		LimitRequestBody  52428800
 		</LimitExcept>
 		
         </Directory>
@@ -76,6 +77,7 @@
         #AllowOverride All
         #Order allow,deny
         #allow from all
+	#LimitRequestBody  52428800
 
         #<LimitExcept GET POST>
           #deny from all
