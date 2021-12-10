@@ -19,7 +19,7 @@
                 #AllowOverride All
                 #Order allow,deny
                 #allow from all
-		
+		#LimitRequestBody  52428800
      		#<LimitExcept GET POST>
 		  #deny from all
 		#</LimitExcept>		
@@ -76,6 +76,7 @@
         AllowOverride All
         Order allow,deny
         allow from all
+	LimitRequestBody  52428800
 
         <LimitExcept GET POST>
           deny from all
