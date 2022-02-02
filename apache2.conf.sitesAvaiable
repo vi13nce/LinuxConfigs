@@ -159,27 +159,39 @@ Include ports.conf
 # your system is serving content from a sub-directory in /srv you must allow
 # access here, or in any related virtual host.
 <Directory />
-        Options -Includes -ExecCGI -MultiViews
+        Options -Includes -ExecCGI -MultiViews -Indexes
         AllowOverride None
         Require all denied
+        #Order deny,allow
+        #Deny from all
+        ServerSignature off
+        #Limit HTTP Request Methods
+        <LimitExcept POST GET>
+           Deny from all
+        </LimitExcept>
 </Directory>
 
 <Directory /usr/share>
         AllowOverride None
         Require all denied
+        ServerSignature off
+        #Limit HTTP Request Methods
+        <LimitExcept POST GET>
+           Deny from all
+        </LimitExcept>
 </Directory>
 
 <Directory /var/www/>
         Options -Includes -ExecCGI -MultiViews -Indexes
         AllowOverride All
         Require all granted
+        ServerSignature off
+        LimitRequestBody 995367
+        #Limit HTTP Request Methods
+        <LimitExcept POST GET>
+           Deny from all
+        </LimitExcept>
 </Directory>
-
-#<Directory /srv/>
-#       Options -Includes -ExecCGI -MultiViews
-#       AllowOverride None
-#       Require all denied
-#</Directory>
 
 
 
