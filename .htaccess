@@ -7,13 +7,18 @@
 	# 'replaceme_NOTAllowed' = Send Bad Traffic
 	# 'replaceme_C2_Allowed' = Final Dest of Allowed Traffic
 	# 'replaceme_Allowed' = Send Good Traffic To Local Server ie index.html
-	
-	
+		
         RewriteEngine on
-        RewriteOptions Inherit
-        ServerSignature Off
+        RewriteOptions Inherit     
+	
 	#ServerTokens Prod
+	ServerSignature Off
         Options -Indexes
+	
+	#Add security HEADERS
+	Header set X-Content-Type-Options nosniff
+	Header set Content-Security-Policy “script-src 'none';”
+	Header always append X-Frame-Options SAMEORIGIN
 	
 	#Disable HTTP1.0 force min 1.1
 	RewriteCond %{THE_REQUEST} !HTTP/1.1$
