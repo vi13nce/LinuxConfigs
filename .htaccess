@@ -16,9 +16,9 @@
         Options -Indexes
 	
 	#Add security HEADERS
-	Header set X-Content-Type-Options nosniff
-	Header set Content-Security-Policy “script-src 'none';”
-	Header always append X-Frame-Options SAMEORIGIN
+	#Header set X-Content-Type-Options nosniff
+	#Header set Content-Security-Policy “script-src 'none';”
+	#Header always append X-Frame-Options SAMEORIGIN
 	
 	#Disable HTTP1.0 force min 1.1
 	RewriteCond %{THE_REQUEST} !HTTP/1.1$
@@ -59,7 +59,7 @@
         RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-BadUSERAGENT_Exploiters,L]
 	
 	#BlackList Epxloiters URI
-	RewriteCond %{REQUEST_URI} ^(/authorization.*|/AirWatch/Login|/stalker_portal.*|/streaming.*|/flu.*|/gemini-iptv.*|/sra_.*|/_ignition.*|/config/.*|/cgi-bin/.*|/actuator/health.*|/index.php.*|/vendor/phpunit.*|/xmlrpc.php?.*|/_ignition.*|/index.php?.*|/ecp/Current/.*|SSTP_DUPLEX_POST .*|/solr/.*|/api/jsonws.*|/GponForm/.*|/?a=fetch&content=.*|/xmlrpc.php?.*|/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application.*|/version.*|XDEBUG_SESSION_START.*|/invoke.*|/.git.*|/infophp.*|/php.*|sra_.*|http.*|owa.*|execute.*|/Telerik.*|/Index/.*|/Nmap.*|/console.*|/index.php?s.*|/logs.*|/vendor/phpunit.*|/dns-query?.*|/mifs.*|/.env.*|/robots.txt.*|/sitemap.xml.*|/.well-known.*|/Autodiscover/Autodiscover.xml.*|/wp-content/.*|/owa/auth/logon.asp.*)$ [NC]
+	RewriteCond %{REQUEST_URI} ^(/authorization.*|/AirWatch/Login|/stalker_portal.*|/streaming.*|/flu.*|/gemini-iptv.*|/sra_.*|/_ignition.*|/config/.*|/cgi-bin/.*|/actuator/health.*|/index.php.*|/vendor/phpunit.*|/xmlrpc.php?.*|/_ignition.*|/index.php?.*|/ecp/Current/.*|SSTP_DUPLEX_POST.*|/solr/.*|/api/jsonws.*|/GponForm/.*|/?a=fetch&content=.*|/xmlrpc.php?.*|/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application.*|/version.*|XDEBUG_SESSION_START.*|/invoke.*|/.git.*|/infophp.*|/php.*|sra_.*|http.*|owa.*|execute.*|/Telerik.*|/Index/.*|/Nmap.*|/console.*|/index.php?s.*|/logs.*|/vendor/phpunit.*|/dns-query?.*|/mifs.*|/.env.*|/robots.txt.*|/sitemap.xml.*|/.well-known.*|/Autodiscover/Autodiscover.xml.*|/wp-content/.*|/owa/auth/logon.asp.*)$ [NC]
 	RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-URI_Exploiters,L]
 	
         #BLACKLISTED USER AGENT STRINGS
