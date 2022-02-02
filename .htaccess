@@ -1,7 +1,4 @@
 	#Location: /var/www/html/.htaccess
-	#REF: https://bluescreenofjeff.com/2016-12-23-apache_mod_rewrite_grab_bag/
-	#REF: https://gist.github.com/Meatballs1/fe50ad25ef6e0225f8b1f7f84aa37d83
-	#REF: https://gist.github.com/curi0usJack/971385e8334e189d93a6cb4671238b10
 	
 	#[*] Replacement Vari Names and what they are for
 	# 'replaceme_NOTAllowed' = Send Bad Traffic
