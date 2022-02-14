@@ -52,7 +52,7 @@
 	#RewriteRule ^.*$ - [R=404,E=backend_name:decoy-BadTimeOrDate,L]
 
 	#BLACKLISTED USER AGENT STRING KNOWN TO SEND EXPLOITS
-	RewriteCond %{HTTP_USER_AGENT} "zgrab|Kryptos Logic Telltale|https|http|masscan|<|l9explore|TraversalHttpPlugin|libwww-perl|DraGunov|Nexus|Python-urllib|curl|Go-http-client|Go http package|baidu|CPython|UCBrowser"
+	RewriteCond %{HTTP_USER_AGENT} "zgrab|shell|Kryptos Logic Telltale|https|http|masscan|<|l9explore|TraversalHttpPlugin|libwww-perl|DraGunov|Nexus|Python-urllib|curl|Go-http-client|Go http package|baidu|CPython|UCBrowser"
         RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-BadUSERAGENT_Exploiters,L]
 	
 	#BlackList Epxloiters URI
