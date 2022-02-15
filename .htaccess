@@ -12,6 +12,12 @@
 	ServerSignature Off
         Options -Indexes
 	
+	#GEOIP Filtering 
+	#GeoIPEnable On
+        #SetEnvIf GEOIP_COUNTRY_CODE US AllowCountry
+        #Deny from all
+        #Allow from env=AllowCountry
+	
 	#Add security HEADERS
 	#Header set X-Content-Type-Options nosniff
 	#Header set Content-Security-Policy “script-src 'none';”
