@@ -58,7 +58,7 @@
 	#RewriteRule ^.*$ - [R=404,E=backend_name:decoy-BadTimeOrDate,L]
 
 	#BLACKLISTED USER AGENT STRING KNOWN TO SEND EXPLOITS
-	RewriteCond %{HTTP_USER_AGENT} "zgrab|Kryptos Logic Telltale|https|http|masscan|<|l9explore|TraversalHttpPlugin|libwww-perl|DraGunov|Nexus|Python-urllib|curl|Go-http-client|Go http package|baidu|CPython|UCBrowser"
+	RewriteCond %{HTTP_USER_AGENT} "zgrab|Kryptos Logic Telltale|python|Apache|https|http|masscan|<|l9explore|TraversalHttpPlugin|libwww-perl|DraGunov|Nexus|Python-urllib|curl|Go-http-client|Go http package|baidu|CPython|UCBrowser"
         RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-BadUSERAGENT_Exploiters,L]
 	
 	#BlackList Epxloiters URI
@@ -66,7 +66,7 @@
 	RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-URI_Exploiters,L]
 	
         #BLACKLISTED USER AGENT STRINGS
-        RewriteCond %{HTTP_USER_AGENT} "censys|virustotalcloud|AppEngine-Google|appid|Analyze|Expanse|Mac OS|sucuri|Roku|AlexaMediaPlayer|Expanse indexes|Linux Gnu|Chrome/54.0 (Windows NT 10.0)|facebookexternalhit|AWS Security Scanner|Go http package|security_txt_analysis|Go http package|libwww-perl|Banner|python-requests|CPython|CriOS|cloudfront|python|Ruby|Linux|Android|AliApp|.NET CLR|Media Center|HTTP|Nimbostratus-Bot|rv:x.x.x|.NET CLR|bits|googleweblight|WindowsPowerShell|.net|Headless|Headlesschrome|Windows NT 6.1|Ubuntu|Bot|python|python-requests|java|linux|wget|curl|CLR|OpenBSD|git|Go-http|Macintosh|OS X|Cisco|BingPreview|iPhone|android|Nexus|blackberry|googlebot-mobile|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos|kindel|kindal|SamsungBrowser|HeadlessChrome|DingTalk|compatible|Opera|zh-cn|Mac|InfoPath|MSIE|X11|Darwin|Presto|CampNet|adobe|BlackWidow|Banner|Dalvik|ChinaClaw|Custo|DISCo|eCatch|EirGrabber|EmailSiphon|EmailWolf|WebPictures|ExtractorPro|EyeNetIE|GetWeb|GetRight|Zeus|SiteSnagger|SuperBot|SuperHTTP|Surfbot|WebAuto|WebCopier|WebSpider|X11|Googlebot|virustotalcloud|Gh0st|OS x|Lynx|Slackbot|nmap|cloudfront|clshttp|archiver|sparta|loader|email|nikto|nessus|rapid|Qualys|vas|miner|HTTrack|crawl|shell|yahoo|google|bot|b\-o\-t|spider|baidu" [NC,OR]
+        RewriteCond %{HTTP_USER_AGENT} "censys|virustotalcloud|AppEngine-Google|BLEXBot|appid|Analyze|Expanse|Mac OS|sucuri|Roku|AlexaMediaPlayer|Expanse indexes|Linux Gnu|Chrome/54.0 (Windows NT 10.0)|facebookexternalhit|AWS Security Scanner|Go http package|security_txt_analysis|Go http package|libwww-perl|Banner|python-requests|CPython|CriOS|cloudfront|python|Ruby|Linux|Android|AliApp|.NET CLR|Media Center|HTTP|Nimbostratus-Bot|rv:x.x.x|.NET CLR|bits|googleweblight|WindowsPowerShell|.net|Headless|Headlesschrome|Windows NT 6.1|Ubuntu|Bot|python|python-requests|java|linux|wget|curl|CLR|OpenBSD|git|Go-http|Macintosh|OS X|Cisco|BingPreview|iPhone|android|Nexus|blackberry|googlebot-mobile|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos|kindel|kindal|SamsungBrowser|HeadlessChrome|DingTalk|compatible|Opera|zh-cn|Mac|InfoPath|MSIE|X11|Darwin|Presto|CampNet|adobe|BlackWidow|Banner|Dalvik|ChinaClaw|Custo|DISCo|eCatch|EirGrabber|EmailSiphon|EmailWolf|WebPictures|ExtractorPro|EyeNetIE|GetWeb|GetRight|Zeus|SiteSnagger|SuperBot|SuperHTTP|Surfbot|WebAuto|WebCopier|WebSpider|X11|Googlebot|virustotalcloud|Gh0st|OS x|Lynx|Slackbot|nmap|cloudfront|clshttp|archiver|sparta|loader|email|nikto|nessus|rapid|Qualys|vas|miner|HTTrack|crawl|shell|yahoo|google|bot|b\-o\-t|spider|baidu" [NC,OR]
         RewriteCond %{HTTP_USER_AGENT} =""
         RewriteRule ^.*$ replaceme_Allowed [E=backend_name:decoy-BadUSERAGENT,L]
 
