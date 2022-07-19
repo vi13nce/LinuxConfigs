@@ -18,7 +18,7 @@ The config files should have the full path where they go to work. Some contain v
  ## [404.html](https://github.com/lunarobliq/LinuxConfigs/blob/master/404.html)
         A nice example 404 page found on Github somewhere (I Googled it). 
         
-  ## [50-default.confl](https://github.com/lunarobliq/LinuxConfigs/blob/master/50-default.conf)
+  ## [50-default.conf](https://github.com/lunarobliq/LinuxConfigs/blob/master/50-default.conf)
         A blank example config for rsyslog
         
  TODO Complete the rest of the README
