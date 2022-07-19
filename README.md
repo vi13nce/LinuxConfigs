@@ -3,6 +3,9 @@
 This is a repo of config files for Ubuntu (debian) based linux systems and services. Useful for pulling down for cloud installs. 
 The config files should have the full path where they go to work. Some contain variables to find an replace in your install script (yes, you have to read what your downloading).
 
+## [WIKI](https://github.com/lunarobliq/LinuxConfigs/wiki)
+The lightly maintained wiki might have some additional info.
+
 ## [htaccess](https://github.com/lunarobliq/LinuxConfigs/blob/master/.htaccess)
         Apache2 redirector and server config file that tell the server how to handle listed requests.
 
