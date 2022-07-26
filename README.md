@@ -24,10 +24,14 @@ The lightly maintained wiki might have some additional info.
   ## [50-default.conf](https://github.com/lunarobliq/LinuxConfigs/blob/master/50-default.conf)
         A blank example config for rsyslog
         
- TODO Complete the rest of the README
- 
-#Legal Notice:
+  ## [50unattended-upgrades ](https://github.com/lunarobliq/LinuxConfigs/blob/master/50unattended-upgrades)
+        A config file that will tell unattended-upgrades to download and install security updates but not restart OS but will restart service.
 
+  ## [51myunattended-upgrades](https://github.com/lunarobliq/LinuxConfigs/blob/master/51myunattended-upgrades)
+        A config file that will tell unattended-upgrades to download and install security updates but not restart OS but will restart service.g
+
+#Legal Notice:
+I am not a lawyer.
 I dont recommend or condone using anything on here for any reason. The scipts here may work, but are just as likely have a chance to break the system they are run on. If you use them you do so at your own risk. I do/have NEVER authorized,condoned, or recommend the use of anything in any of my repos for any reason, even if previously stated. This is a collection of simple code I found useful with my own linux OS for educational purposes only. All credit goes to the authors whos full URL and/or github account and/or Repo is listed in the section above, please see their sites for more info or issue with their repo's. It should be noted that since these are all publically available. Do not use for evil, malicious purposes, or on machines you do not own.
 
 This is free and unencumbered software released into the public domain.
