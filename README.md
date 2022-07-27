@@ -25,10 +25,10 @@ The lightly maintained wiki might have some additional info.
         A blank example config for rsyslog
         
   ## [50unattended-upgrades ](https://github.com/lunarobliq/LinuxConfigs/blob/master/50unattended-upgrades)
-        A config file that will tell unattended-upgrades to download and install security updates but not restart OS but will restart service.
+        Master config file that will tell unattended-upgrades to download and install security updates but not restart OS but will restart service.
 
   ## [51myunattended-upgrades](https://github.com/lunarobliq/LinuxConfigs/blob/master/51myunattended-upgrades)
-        A config file that will tell unattended-upgrades to download and install security updates but not restart OS but will restart service.g
+        Running config file that will tell unattended-upgrades to download and install security updates but not restart OS but will restart service.g
 
 #Legal Notice:
 I am not a lawyer.
