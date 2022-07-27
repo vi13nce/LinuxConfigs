@@ -46,7 +46,7 @@ The lightly maintained wiki might have some additional info.
         This file is used by psad to elevate/decrease the danger levels of IP addresses (or networks in CIDR notation) so that psad does not have to apply the normal signature logic.  This is useful if certain IP addresses or networks are known trouble makers and should automatically be assigned higher danger levels than would normally be assigned.  Also, psad can be made to ignore certain IP addresses or networks if a danger level of "0" is specified.  Optionally, danger levels for IPs/networks can be influenced based on protocol (tcp, udp, icmp).
  
    ## [before.rules](https://github.com/lunarobliq/LinuxConfigs/blob/master/before.rules)
-        UFW before rules config file
+        UFW before rules config file. These will be apploed before any UFW rules. This is not listen in output for FW rules.
  
 # Legal Notice:
 
