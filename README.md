@@ -51,6 +51,9 @@ The lightly maintained wiki might have some additional info.
    ## [before6.rules](https://github.com/lunarobliq/LinuxConfigs/blob/master/before6.rules)
         UFW IPV6 before rules config file. These will be apploed before any UFW rules. This is not listen in output for FW rules.
         
+   ## [geoip.conf](https://github.com/lunarobliq/LinuxConfigs/blob/master/geoip.conf)
+        Apache GEOIP webserver IP filtering mod config.     
+        
 # Legal Notice:
 
 I am not a lawyer.
