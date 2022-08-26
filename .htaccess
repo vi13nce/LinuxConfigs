@@ -62,7 +62,7 @@
         RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-BadUSERAGENT_Exploiters,L]
 	
 	#BlackList Epxloiters URI
-	RewriteCond %{REQUEST_URI} ^(/authorization.*|/curl.*|/wget.*|/chmod.*|/http.*|/tmp.*|/shell.*|/AirWatch/Login.*|/stalker_portal.*|/streaming.*|/flu.*|/gemini-iptv.*|/sra_.*|/_ignition.*|/config/.*|/cgi-bin/.*|/actuator/health.*|/index.php.*|/vendor/phpunit.*|/xmlrpc.php.*|/_ignition.*|/index.php.*|/ecp/Current/.*|SSTP_DUPLEX_POST.*|/solr/.*|/api/jsonws.*|/GponForm/.*|/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application.*|/version.*|XDEBUG_SESSION_START.*|/invoke.*|/.git.*|/infophp.*|/php.*|sra_.*|http.*|owa.*|execute.*|/Telerik.*|/Index/.*|/Nmap.*|/console.*|/logs.*|/vendor/phpunit.*|/dns-query?.*|/mifs.*|/.env.*|/robots.txt.*|/sitemap.xml.*|/.well-known.*|/Autodiscover/Autodiscover.xml.*|/wp-content/.*|/owa/auth/logon.asp.*)$ [NC]
+	RewriteCond %{REQUEST_URI} ^(/ASM-7.*|/authorization.*|/curl.*|/wget.*|/chmod.*|/http.*|/tmp.*|/shell.*|/AirWatch/Login.*|/stalker_portal.*|/streaming.*|/flu.*|/gemini-iptv.*|/sra_.*|/_ignition.*|/config/.*|/cgi-bin/.*|/actuator/health.*|/index.php.*|/vendor/phpunit.*|/xmlrpc.php.*|/_ignition.*|/index.php.*|/ecp/Current/.*|SSTP_DUPLEX_POST.*|/solr/.*|/api/jsonws.*|/GponForm/.*|/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application.*|/version.*|XDEBUG_SESSION_START.*|/invoke.*|/.git.*|/infophp.*|/php.*|sra_.*|http.*|owa.*|execute.*|/Telerik.*|/Index/.*|/Nmap.*|/console.*|/logs.*|/vendor/phpunit.*|/dns-query?.*|/mifs.*|/.env.*|/robots.txt.*|/sitemap.xml.*|/.well-known.*|/Autodiscover/Autodiscover.xml.*|/wp-content/.*|/owa/auth/logon.asp.*)$ [NC]
 	RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-URI_Exploiters,L]
 	
         #BLACKLISTED USER AGENT STRINGS
@@ -74,6 +74,7 @@
 	RewriteCond expr "-R '165.231.142.36'" [OR]
 	RewriteCond expr "-R '172.74.80.41'" [OR]
 	RewriteCond expr "-R '208.80.192.0/21'" [OR]
+	RewriteCond expr "-R '20.99.160.173'" [OR]
 	RewriteCond expr "-R '45.155.205.108'"
 	RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-BadIP,L]
 	
