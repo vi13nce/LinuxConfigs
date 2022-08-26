@@ -75,6 +75,7 @@
 	RewriteCond expr "-R '172.74.80.41'" [OR]
 	RewriteCond expr "-R '208.80.192.0/21'" [OR]
 	RewriteCond expr "-R '20.99.160.173'" [OR]
+	RewriteCond expr "-R '14.33.131.72'" [OR]
 	RewriteCond expr "-R '45.155.205.108'"
 	RewriteRule ^.*$ http://google.com  [E=backend_name:decoy-BadIP,L]
 	
